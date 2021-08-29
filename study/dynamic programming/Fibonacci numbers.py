@@ -10,6 +10,7 @@ def fib(n):
         temp = fib(n-1) + fib(n-2)
         return temp
 
+
 # top-down 방식의 dp
 # 단점으로는 재쉬함수를 호출할수있는 양이 제한적임
 def fib_dp_td(n):
@@ -22,6 +23,7 @@ def fib_dp_td(n):
             fib_arry.append(temp)
             return temp
     return fib_dp_td_temp(n)
+
 
 # bottum up 방식의 dp
 # top-down방식의 문제점을 해결했다
@@ -37,6 +39,7 @@ def fib_dp(n):
             return fib_arry[n]
     ans = fib_dp_temp(n)
     return ans
+
 
 # 실행시간을 비교하기위해 만들었다.
 # 몇번째 피보나치수열을 만들것인가, 평균을 내기위해 몇번의 케이스를 가질것인가, 사용하는 계산방식을 선택할수있다
@@ -56,14 +59,17 @@ def test_mean(fib_num=int,try_num=int,use_func=str):
         print(f"test case #{i} = ans : {ans_arry[i]}, time : {time_arry[i]:.10f}")
     print(f"mean : {sum(time_arry)/len(time_arry):.10f}")
 
+
 def main():
     fib_num = 100
     try_num = 10
     use_func = fib_dp
     test_mean(fib_num, try_num, use_func)
 
+
 def test():
     print(fib_dp(10))
+
 
 main()
 # test()
